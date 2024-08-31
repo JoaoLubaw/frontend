@@ -53,6 +53,7 @@ export const StyledSwiper = styled(Swiper)`
 export const ContentContainer = styled.div`
   text-align: center;
   padding: 24px;
+  margin-bottom: 8vh;
 
   h2 {
     font-size: 24px;
