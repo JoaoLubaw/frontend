@@ -1,24 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import { ToastContainer, Slide } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import Header from "./components/Header/index.jsx";
+import MenuHam from "./components/MenuHam/index.jsx";
+import Sidebar from "./components/Sidebar/index.jsx";
+import Rotas from "./routes.jsx";
+import { GlobalCss } from "./styles.js";
+import { BrowserRouter } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <GlobalCss />
+      <Header />
+      <ToastContainer
+        position="top-right"
+        autoClose={2000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="colored"
+        transition={Slide}
+      />
+      <Sidebar />
+      <Rotas />
+      <MenuHam />
+    </BrowserRouter>
   );
 }
 

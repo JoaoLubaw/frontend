@@ -1,0 +1,88 @@
+/* Botão de menu (as barras) */
+.bm-burger-button {
+  position: fixed;
+  width: 36px;
+  height: 30px;
+  right: 10vw; /* Ajuste conforme necessário */
+  top: 20px; /* Ajuste conforme necessário */
+  z-index: 1000;
+}
+
+/* Estilos das barras do botão */
+.bm-burger-bars {
+  background: #201e1f;
+}
+
+/* Configuração da barra lateral deslizante */
+.bm-menu-wrap {
+  position: fixed;
+  height: 100%;
+  top: 0;
+  right: 0; /* Garante que a barra lateral venha da direita */
+  width: 250px; /* Define a largura da barra lateral */
+}
+
+/* Estilos da barra lateral */
+.bm-menu {
+  background: #201e1f;
+  padding: 2.5em 1.5em 0;
+  font-size: 1.15em;
+  height: 100%;
+  box-sizing: border-box; /* Garante que padding e bordas sejam incluídos na largura */
+  overflow-y: auto; /* Permite rolagem caso o conteúdo ultrapasse a altura */
+}
+
+/* Lista de itens no menu */
+.bm-item-list {
+  color: #000;
+  padding: 0.8em;
+}
+
+/* Estilos dos links no menu */
+.bm-item {
+  display: block;
+  padding: 0.5em;
+  color: white;
+  text-decoration: none;
+}
+
+/* Cor da cruz */
+.bm-cross {
+  background: #bdc3c7;
+}
+
+/* Fundo escurecido quando o menu está aberto */
+.bm-overlay {
+  background: rgba(0, 0, 0, 0.3);
+  left: 0;
+  top: 0;
+}
+
+.active {
+  font-weight: bold;
+  background: linear-gradient(
+    to right,
+    red,
+    orange,
+    yellow,
+    green,
+    blue,
+    indigo,
+    violet
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent; /* Isso permite que o gradiente apareça */
+  -webkit-text-stroke: 0.3px black; /* Adiciona um contorno ao redor do texto */
+}
+
+.menuHidden {
+  display: none;
+  transform: translateY(-100%);
+  opacity: 0;
+}
+
+.menuVisible {
+  transform: translateY(0);
+  opacity: 1;
+}
