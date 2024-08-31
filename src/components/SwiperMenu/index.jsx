@@ -18,8 +18,8 @@ const SwiperMenu = () => {
       titulo: "Arte e Cultura",
       imagem: ArteCultura,
       Descricao: `Fundada em 2017, a Casa 1 é um projeto de sociedade civil que tem como propósito a acolhida de jovens entre 18 e 25 anos que foram expulsos de casa pela família por suas orientações afetivas sexuais e identidade de gênero. O trabalho corre em paralelo às atividades do Centro Cultural e da Clínica Social, com todos os serviços ofertados gratuitamente.
-Fundada em 2017, a Casa 1 é um projeto de sociedade civil que tem como propósito a acolhida de jovens entre 18 e 25 anos que foram expulsos de casa pela família por suas orientações afetivas sexuais e identidade de gênero. O trabalho corre em paralelo às atividades do Centro Cultural e da Clínica Social, com todos os serviços ofertados gratuitamente.
-Fundada em 2017, a Casa 1 é um projeto de sociedade civil que tem como propósito a acolhida de jovens entre 18 e 25 anos que foram expulsos de casa pela família por suas orientações afetivas sexuais e identidade de gênero. O trabalho corre em paralelo às atividades do Centro Cultural e da Clínica Social, com todos os serviços ofertados gratuitamente.`,
+			Fundada em 2017, a Casa 1 é um projeto de sociedade civil que tem como propósito a acolhida de jovens entre 18 e 25 anos que foram expulsos de casa pela família por suas orientações afetivas sexuais e identidade de gênero. O trabalho corre em paralelo às atividades do Centro Cultural e da Clínica Social, com todos os serviços ofertados gratuitamente.
+			Fundada em 2017, a Casa 1 é um projeto de sociedade civil que tem como propósito a acolhida de jovens entre 18 e 25 anos que foram expulsos de casa pela família por suas orientações afetivas sexuais e identidade de gênero. O trabalho corre em paralelo às atividades do Centro Cultural e da Clínica Social, com todos os serviços ofertados gratuitamente.`,
     },
     {
       id: "2",
@@ -52,14 +52,14 @@ Fundada em 2017, a Casa 1 é um projeto de sociedade civil que tem como propósi
       Descricao: "Lorem ipsum dolor sit amet consectetur...",
     },
   ]);
-
   const [selected, setSelected] = useState(items[0]);
   const swiperRef = useRef(null);
 
   const handleSlideChange = () => {
     if (swiperRef.current) {
-      const activeIndex = swiperRef.current.swiper.realIndex;
-      setSelected(items[activeIndex]);
+      const swiper = swiperRef.current.swiper;
+      const activeIndex = swiper.realIndex; // Use realIndex para obter o índice atual
+      setSelected(items[activeIndex]); // Atualize o item selecionado
     }
   };
 
@@ -67,9 +67,9 @@ Fundada em 2017, a Casa 1 é um projeto de sociedade civil que tem como propósi
     if (swiperRef.current) {
       const swiper = swiperRef.current.swiper;
       const index = items.findIndex((i) => i.id === item.id);
-      swiper.slideTo(index);
-      setSelected(item); // Update the selected item
-      swiper.autoplay.pause();
+      // Ajuste a lógica se necessário
+      setSelected(item); // Atualiza o item selecionado
+      swiper.autoplay.pause(); // Pausa o autoplay
     }
   };
 
@@ -87,7 +87,6 @@ Fundada em 2017, a Casa 1 é um projeto de sociedade civil que tem como propósi
         autoplay={{
           delay: 4000,
           disableOnInteraction: true,
-          reverseDirection: true,
         }}
         onSlideChange={handleSlideChange}
         ref={swiperRef}
