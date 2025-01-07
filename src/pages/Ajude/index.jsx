@@ -48,7 +48,7 @@ const Ajude = () => {
           </p>
         </div>
       </AjudeContainer>
-      <Footer mode={"absolute"} />
+      <Footer mode={"relative"} />
     </>
   );
 };

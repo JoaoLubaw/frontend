@@ -65,10 +65,12 @@ export const ContatoContainer = styled.div`
   }
 
   .SocialMedias {
-    margin-top: 40vh;
+    margin-top: 35vh;
+    margin-bottom: 5vh;
 
     @media (max-width: ${breakpoints.mobileG}) {
       margin-top: 2vh;
+      margin-bottom: 2vh;
       h2 {
         font-size: 6vw;
         padding-bottom: 6px;

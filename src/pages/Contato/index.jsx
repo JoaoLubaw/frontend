@@ -59,7 +59,7 @@ const Contato = () => {
           </section>
         </div>
       </ContatoContainer>
-      <Footer mode={"absolute"} />
+      <Footer mode={"relative"} />
     </>
   );
 };
